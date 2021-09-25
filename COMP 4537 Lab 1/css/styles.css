@@ -1,0 +1,32 @@
+a:link{
+  text-decoration: none;
+  margin-right: 1%;
+}
+
+#addNoteDiv{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#txtarea{
+  background-color: rgb(206, 34, 103);
+  height: 100px;
+  width: 200px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#removeBtn{
+  background-color: aquamarine;
+  margin-left: 2%;
+  position: absolute;
+  margin-top: 45px;
+  
+}
+
+#addBtn{
+  background-color: greenyellow;
+  margin-top: 20px;
+}
