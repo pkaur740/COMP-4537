@@ -1,4 +1,26 @@
 const msg_notSupported = "Sorry, web storage is not supported!";
+
+
+function getTime() {
+    function Clock() {
+        this.date = new Date();
+        this.hr = this.date.getHours();
+        this.min = this.date.getMinutes();
+        this.sec = this.date.getSeconds();
+    }
+    var clock = new Clock();
+    clock.get_time = function() {
+        var ampm = this.hr >= 12 ? 'pm' : 'am';
+        this.hr = this.hr % 12;
+        this.hr = this.hr ? this.hr : 12; // the hour '0' should be '12'
+        this.sec = String(this.sec).length == 1 ? "0" + this.sec: this.sec;
+        this.min = String(this.min).length == 1 ? "0" + this.min: this.min;
+        document.getElementById("time").innerHTML = "stored at:" + this.hr + ":" + this.min + ":" + this.sec + ampm;
+    }
+
+    clock.get_time();
+};
+
 getTime();
 function addNote(){
     const parentDiv = document.createElement("div");
@@ -43,23 +65,8 @@ setInterval(function(){
         noteObj = {[i]: textareas[i].value};
         lsarray.push(noteObj);
     }
-    // console.log(lsarray);
     lsarray = JSON.stringify(lsarray);
     localStorage.setItem("notes", lsarray);
     lsarray = [];
     getTime();
 }, 2000);
-
-
-function getTime() {
-    var d = new Date();
-    var hr = d.getHours();
-    var ampm = hr >= 12 ? 'pm' : 'am';
-    hr = hr % 12;
-    hr = hr ? hr : 12; // the hour '0' should be '12'
-    var min = d.getMinutes();
-    var sec = d.getSeconds();
-    sec = String(sec).length == 1 ? "0" + sec: sec;
-    min = String(min).length == 1 ? "0" + min: min;
-    document.getElementById("time").innerHTML = "stored at:" + hr + ":" + min + ":" + sec + ampm;
-}
