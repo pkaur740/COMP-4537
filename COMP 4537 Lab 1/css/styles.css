@@ -10,7 +10,7 @@ a:link{
   justify-content: center;
 }
 
-#txtarea{
+textarea{
   background-color: rgb(206, 34, 103);
   height: 100px;
   width: 200px;

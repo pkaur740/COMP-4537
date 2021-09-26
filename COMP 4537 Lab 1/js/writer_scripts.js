@@ -1,5 +1,5 @@
 const msg_notSupported = "Sorry, web storage is not supported!";
-
+getTime();
 function addNote(){
     const parentDiv = document.createElement("div");
     const num = Math.random()
@@ -43,9 +43,23 @@ setInterval(function(){
         noteObj = {[i]: textareas[i].value};
         lsarray.push(noteObj);
     }
-    console.log(lsarray);
+    // console.log(lsarray);
     lsarray = JSON.stringify(lsarray);
     localStorage.setItem("notes", lsarray);
     lsarray = [];
-
+    getTime();
 }, 2000);
+
+
+function getTime() {
+    var d = new Date();
+    var hr = d.getHours();
+    var ampm = hr >= 12 ? 'pm' : 'am';
+    hr = hr % 12;
+    hr = hr ? hr : 12; // the hour '0' should be '12'
+    var min = d.getMinutes();
+    var sec = d.getSeconds();
+    sec = String(sec).length == 1 ? "0" + sec: sec;
+    min = String(min).length == 1 ? "0" + min: min;
+    document.getElementById("time").innerHTML = "stored at:" + hr + ":" + min + ":" + sec + ampm;
+}
