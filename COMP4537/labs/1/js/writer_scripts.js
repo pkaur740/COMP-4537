@@ -8,9 +8,9 @@ function getTime() {
         this.min = this.date.getMinutes();
         this.sec = this.date.getSeconds();
     }
-    var clock = new Clock();
+    let clock = new Clock();
     clock.get_time = function() {
-        var ampm = this.hr >= 12 ? 'pm' : 'am';
+        let ampm = this.hr >= 12 ? 'pm' : 'am';
         this.hr = this.hr % 12;
         this.hr = this.hr ? this.hr : 12; // the hour '0' should be '12'
         this.sec = String(this.sec).length == 1 ? "0" + this.sec: this.sec;
