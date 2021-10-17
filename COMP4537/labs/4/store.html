@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Lab 4 Minimal Dictionary RESTful Service, hosted at two origins</title>
+    <link href="css/styles.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+    <h1>Add Word to Dictionary</h1>
+    <h3>Create a new entry by typing the word and definition in the textboxes below and click SUBMIT.</h3>
+
+    <div id="textareadiv">
+        <textarea id="word" placeholder="Word"></textarea>
+        <textarea id="definition" rows="4" cols="50"placeholder="Definition"></textarea>
+    </div>
+
+    <div id="btnDiv">
+        <button type="button" id="submitBtn" onclick="post()">SUBMIT</button>
+    </div>
+    
+    <div id="msg">
+        
+    </div>
+
+
+    <script src="js/dictionary.js"></script>
+
+</body>
+
+</html>

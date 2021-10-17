@@ -1,0 +1,37 @@
+h1,
+h3 {
+    color: rgb(9, 52, 131);
+    text-align: center;
+}
+
+#word {
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#textareadiv {
+    text-align: center;
+}
+
+#submitBtn, #searchBtn {
+    background-color: rgb(4, 70, 170);
+    border: rgb(4, 70, 170) 3px solid;
+    color: white;
+    margin-top: 50px;
+    position: relative;
+}
+
+#btnDiv {
+    text-align: center;
+}
+
+#msg {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#searchbar{
+    text-align: center;
+    margin-top: 50px;
+}
